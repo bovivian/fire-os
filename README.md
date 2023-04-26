@@ -2,6 +2,8 @@
 
 OS made as an academic project. This is a first-try attempt to create a functional os from the scratch.
 
+Authors: Vadzim Shyshko, Damian Duy
+
 # Requirements
 - qemu
 - gcc cross-compiler
