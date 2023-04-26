@@ -1,0 +1,30 @@
+print:
+    pusha
+
+start:
+    mov al, [bx] ; 'bx' is the base address for the string
+    cmp al, 0 
+    je finished
+
+    mov ah, 0x0e
+    int 0x10 ; print using BIOS
+
+    ; increment pointer and do next loop
+    add bx, 1
+    jmp start
+
+finished:
+    popa
+    ret
+
+print_nl:
+    pusha
+    
+    mov ah, 0x0e
+    mov al, 0x0a ; newline char
+    int 0x10
+    mov al, 0x0d ; carriage return
+    int 0x10
+    
+    popa
+    ret
